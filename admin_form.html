@@ -1,43 +1,57 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/style.css" title="style1" media="screen,tv,print,handheld"/>
-  <title>Form</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center"><u>Admin Form</u></h1>
 
-<h1><u><center>Admin Form </center></u></h1><center>
-    
-<form action="admin_table.php" method="POST">
-            <label for="id">ID</label>
-            <input type="number" name="id" id="id"><br><br>
+        <form action="admin_table.php" method="POST">
+            <div class="form-group">
+                <label for="aid">ID</label>
+                <input type="number" class="form-control" name="aid" id="aid">
+            </div>
 
-            <label for="first name">First Name</label>
-            <input type="text" name="first_name" id="first_name"><br><br>
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name">
+            </div>
 
-            <label for="last name">Last Name</label>
-            <input type="text" name="last_name" id="last_name"><br><br>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name">
+            </div>
 
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email"><br><br>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" id="email">
+            </div>
 
-            <label for="telephone">Tel_Number</label>
-            <input type="number" name="telephone" id="telephone"><br><br>
+            <div class="form-group">
+                <label for="telephone">Tel_Number</label>
+                <input type="number" class="form-control" name="telephone" id="telephone">
+            </div>
 
-            <input type="submit" value="INSERT">
+            <button type="submit" class="btn btn-primary">INSERT</button>
         </form>
-      </section>
-<form action="home.html">
-            <input type="submit" value="BACK TO HOME">
-        </form></center>
-    </center>
+
+        <form action="home.html">
+            <button type="submit" class="btn btn-secondary">BACK TO HOME</button>
+        </form>
+    </div>
+
+    <footer class="text-center"><!-- Footer section -->
+        <p>&copy; &reg; 2024 UR CBE BIT YEAR 2 @ Group A</p><!-- Copyright and trademark notice -->
+    </footer><!-- Footer section -->
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
-
-    <footer><!-- Footer section -->
-            <p>&copy &reg 2024 UR CBE BIT YEAR 2 @ Group A</p><!-- Copyright and trademark notice -->
-        </footer><!-- Footer section -->
-    </body>
-    </html>

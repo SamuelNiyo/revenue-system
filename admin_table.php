@@ -10,8 +10,8 @@
 <body>
     <div class="container">
         <h2 style="text-align: center; font-family: century; font-weight: bold;">GOVERNMENT REVENUE MANAGEMENT SYSTEM</h2>
-        <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF ADMIN IN OUR THE SYSTEM</h4>
-        <a href="admin_form.html" class="btn btn-primary" style="margin-top: 0px;">New Admin</a>
+        <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF USERS IN OUR SYSTEM</h4>
+        <a href="user_form.html" class="btn btn-primary" style="margin-top: 0px;">New User</a>
         <a href="home.html" class="btn btn-secondary" style="margin-left: 1000px;">Back Home</a>
         <table class="table table-bordered">
             <thead class="bg-warning">
@@ -20,7 +20,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$database = "revenuesystem";
+$database = "revenuemanagementsystem";
 
 // Cxfhbfdgnhgfjnreating connection
 $connection = new mysqli($host, $user, $pass, $database);
@@ -33,11 +33,11 @@ if ($connection->connect_error) {
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare and bind the parameters
- $stmt = $connection->prepare("INSERT INTO adminn (id, first_name, last_name, email, telephone) VALUES (?, ?, ?, ?, ?,)");
-$stmt->bind_param("ssssi", $id, $first_name, $last_name, $email, $telephone);
+ $stmt = $connection->prepare("INSERT INTO adminn (aid, first_name, last_name, email, telephone) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssi", $aid, $first_name, $last_name, $email, $telephone);
 
 // Set parameters
-$id = $_POST['id'];
+$aid = $_POST['id'];
 $first_name = $_POST['first_name'];    
 $last_name = $_POST['last_name']; 
 $email = $_POST['email']; 
@@ -67,7 +67,7 @@ $result = $connection->query($sql);
     <title></title>
     <style>
         table {
-            width: 100%;
+            width: 80%;
             border-collapse: collapse;
         }
 
@@ -90,7 +90,7 @@ $result = $connection->query($sql);
     </style> 
 </head>
 <body>
-    <center><h2>ADMIN</h2></center>
+    <center><h2></h2></center>
     <table border="5">
         <table border="8">
         <tr>
@@ -103,23 +103,24 @@ $result = $connection->query($sql);
             <th>Update</th>
         </tr>
         <?php
-        // Check if there are any adminn
+
+        // Check if there are any cars
         if ($result->num_rows > 0) {
             // Output data for each row
             while ($row = $result->fetch_assoc()) {
-                $aid = $row['id']; // Fetch the admin id
+                $aid = $row['aid']; // Fetch the car Id
                 echo "<tr>
-                    <td>" . $row['id'] . "</td>
+                    <td>" . $row['aid'] . "</td>
                     <td>" . $row['first_name'] . "</td>
                     <td>" . $row['last_name'] . "</td>
                     <td>" . $row['email'] . "</td>
                     <td>" . $row['telephone'] . "</td>
-                    <td><a style='padding:4px' href='deleteuser.php?id=$aid'>Delete</a></td> 
-                    <td><a style='padding:4px' href='update_car.php?id=$aid'>Update</a></td> 
+                    <td><a style='padding:4px' href='admin_delete.php?aid={$row['aid']}'>Delete</a></td>
+                    <td><a style='padding:4px' href='admin_edit.php?aid={$row['aid']}'>edit</a></td> 
                 </tr>";
             }
         } else {
-            echo "<tr><td colspan='5'>No data found</td></tr>";
+            echo "<tr><td colspan='8'>No data found</td></tr>";
         }
         // Close the database connection
         $connection->close();

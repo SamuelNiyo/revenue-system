@@ -3,9 +3,9 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$database = "revenuesystem";
+$database = "revenuemanagementsystem";
 
-// Creating connection
+// Cxfhbfdgnhgfjnreating connection
 $connection = new mysqli($host, $user, $pass, $database);
 
 // Check connection

@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h2 style="text-align: center; font-family: century; font-weight: bold;">GOVERNMENT REVENUE MANAGEMENT SYSTEM</h2>
-        <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF USERS IN OUR THE SYSTEM</h4>
+        <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF USERS IN OUR SYSTEM</h4>
         <a href="user_form.html" class="btn btn-primary" style="margin-top: 0px;">New User</a>
         <a href="home.html" class="btn btn-secondary" style="margin-left: 1000px;">Back Home</a>
         <table class="table table-bordered">
@@ -20,7 +20,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$database = "revenuesystem";
+$database = "revenuemanagementsystem";
 
 // Cxfhbfdgnhgfjnreating connection
 $connection = new mysqli($host, $user, $pass, $database);
@@ -33,11 +33,11 @@ if ($connection->connect_error) {
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare and bind the parameters
- $stmt = $connection->prepare("INSERT INTO user (id, first_name, last_name, tin_number, address, email, registration_date, agent_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+ $stmt = $connection->prepare("INSERT INTO user (uid, first_name, last_name, tin_number, address, email, registration_date, agent_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssssi", $id, $first_name, $last_name, $tin_number, $address, $email, $registration_date, $agent_id);
 
 // Set parameters
-$id = $_POST['id'];
+$id = $_POST['uid'];
 $first_name = $_POST['first_name'];    
 $last_name = $_POST['last_name'];
 $tin_number = $_POST['tin_number'];
@@ -83,17 +83,17 @@ $result = $connection->query($sql);
         th {
             background-color: #f2f2f2;
         }
-        footer{
+         footer{
     height: 50px;
     text-align: center;
-    padding: 15px;
+    padding: 25px;
     color: white;
     background-color: blue;
 }
     </style> 
 </head>
 <body>
-    <center><h2>USERS</h2></center>
+    <center><h2></h2></center>
     <table border="5">
         <table border="8">
         <tr>
@@ -114,9 +114,9 @@ $result = $connection->query($sql);
         if ($result->num_rows > 0) {
             // Output data for each row
             while ($row = $result->fetch_assoc()) {
-                $uid = $row['id']; // Fetch the car Id
+                $uid = $row['uid']; // Fetch the car Id
                 echo "<tr>
-                    <td>" . $row['id'] . "</td>
+                    <td>" . $row['uid'] . "</td>
                     <td>" . $row['first_name'] . "</td>
                     <td>" . $row['last_name'] . "</td>
                     <td>" . $row['tin_number'] . "</td>
@@ -124,8 +124,8 @@ $result = $connection->query($sql);
                     <td>" . $row['email'] . "</td>
                     <td>" . $row['registration_date'] . "</td>
                     <td>" . $row['agent_id'] . "</td>
-                    <td><a style='padding:4px' href='deleteuser.php?id={$row['id']}'>Delete</a></td>
-                    <td><a style='padding:4px' href='user_edit.php?id={$row['id']}'>edit</a></td> 
+                    <td><a style='padding:4px' href='deleteuser.php?uid={$row['uid']}'>Delete</a></td>
+                    <td><a style='padding:4px' href='user_edit.php?uid={$row['uid']}'>edit</a></td> 
                 </tr>";
             }
         } else {

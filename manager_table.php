@@ -20,7 +20,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$database = "revenuesystem";
+$database = "revenuemanagementsystem";
 
 // Cxfhbfdgnhgfjnreating connection
 $connection = new mysqli($host, $user, $pass, $database);
@@ -33,11 +33,11 @@ if ($connection->connect_error) {
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare and bind the parameters
- $stmt = $connection->prepare("INSERT INTO manager (id, first_name, last_name, address, specialization) VALUES (?, ?, ?, ?, ?,)");
-$stmt->bind_param("ssssi", $id, $first_name, $last_name, $address, $specialization);
+ $stmt = $connection->prepare("INSERT INTO manager (mid, first_name, last_name, address, specialization) VALUES (?, ?, ?, ?, ?,)");
+$stmt->bind_param("ssssi", $mid, $first_name, $last_name, $address, $specialization);
 
 // Set parameters
-$id = $_POST['id'];
+$mid = $_POST['mid'];
 $first_name = $_POST['first_name'];    
 $last_name = $_POST['last_name']; 
 $address = $_POST['address']; 
@@ -107,15 +107,15 @@ $result = $connection->query($sql);
         if ($result->num_rows > 0) {
             // Output data for each row
             while ($row = $result->fetch_assoc()) {
-                $aid = $row['id']; // Fetch the admin id
+                $aid = $row['mid']; // Fetch the admin mid
                 echo "<tr>
-                    <td>" . $row['id'] . "</td>
+                    <td>" . $row['mid'] . "</td>
                     <td>" . $row['first_name'] . "</td>
                     <td>" . $row['last_name'] . "</td>
                     <td>" . $row['address'] . "</td>
                     <td>" . $row['specialization'] . "</td>
-                    <td><a style='padding:4px' href='deleteuser.php?id=$aid'>Delete</a></td> 
-                    <td><a style='padding:4px' href='update_car.php?id=$aid'>Update</a></td> 
+                    <td><a style='padding:4px' href='deleteuser.php?mid=$adid'>Delete</a></td> 
+                    <td><a style='padding:4px' href='update_car.php?mid=$aid'>Update</a></td> 
                 </tr>";
             }
         } else {

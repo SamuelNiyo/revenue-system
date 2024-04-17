@@ -12,16 +12,16 @@ if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 
-if (isset($_GET["uid"])) {
-    $uid = $connection->real_escape_string($_GET["uid"]);
+if (isset($_GET["aid"])) {
+    $aid = $connection->real_escape_string($_GET["aid"]);
 
     // Prepare DELETE statement
-    $sql = "DELETE FROM user WHERE uid = $uid";
+    $sql = "DELETE FROM adminn WHERE aid = $aid";
 
     // Execute DELETE statement
     if ($connection->query($sql) === TRUE) {
         echo "Record deleted successfully";
-         header("Location: user_table.php");
+         header("Location: admin_table.php");
     } else {
         echo "Error deleting record: " . $connection->error;
     }
