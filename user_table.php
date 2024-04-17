@@ -125,7 +125,7 @@ $result = $connection->query($sql);
                     <td>" . $row['registration_date'] . "</td>
                     <td>" . $row['agent_id'] . "</td>
                     <td><a style='padding:4px' href='deleteuser.php?id={$row['id']}'>Delete</a></td>
-                    <td><a style='padding:4px' href='update_car.php?car_Id=$uid'>Update</a></td> 
+                    <td><a style='padding:4px' href='user_edit.php?id={$row['id']}'>edit</a></td> 
                 </tr>";
             }
         } else {
