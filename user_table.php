@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $stmt->bind_param("sssssssi", $id, $first_name, $last_name, $tin_number, $address, $email, $registration_date, $agent_id);
 
 // Set parameters
-$id = $_POST['uid'];
+$uid = $_POST['uid'];
 $first_name = $_POST['first_name'];    
 $last_name = $_POST['last_name'];
 $tin_number = $_POST['tin_number'];
@@ -97,7 +97,7 @@ $result = $connection->query($sql);
     <table border="5">
         <table border="8">
         <tr>
-            <th> id</th>
+            <th>uid</th>
             <th>first_name</th>
             <th>last_name</th>
             <th>tin_number</th>
