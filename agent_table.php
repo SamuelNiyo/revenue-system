@@ -10,8 +10,8 @@
 <body>
     <div class="container">
         <h2 style="text-align: center; font-family: century; font-weight: bold;">GOVERNMENT REVENUE MANAGEMENT SYSTEM</h2>
-        <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF USERS IN OUR SYSTEM</h4>
-        <a href="manager_form.html" class="btn btn-primary" style="margin-top: 0px;">New User</a>
+        <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF AGENTS IN OUR SYSTEM</h4>
+        <a href="agent_form.html" class="btn btn-primary" style="margin-top: 0px;">New User</a>
         <a href="home.html" class="btn btn-secondary" style="margin-left: 1000px;">Back Home</a>
         <table class="table table-bordered">
             <thead class="bg-warning">
@@ -33,15 +33,16 @@ if ($connection->connect_error) {
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare and bind the parameters
- $stmt = $connection->prepare("INSERT INTO manager (mid, first_name, last_name, address, specialization) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("ssssi", $mid, $first_name, $last_name, $address, $specialization);
+ $stmt = $connection->prepare("INSERT INTO agent (agid, first_name, last_name, telephone, adminnid, managerid) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("issiii", $agid, $first_name, $last_name, $telephone, $adminnid, $managerid);
 
 // Set parameters
-$mid = $_POST['mid'];
+$agid = $_POST['agid'];
 $first_name = $_POST['first_name'];    
-$last_name = $_POST['last_name']; 
-$address = $_POST['address']; 
-$specialization = $_POST['specialization'];
+$last_name = $_POST['last_name'];
+$telephone = $_POST['telephone'];
+$adminnid = $_POST['adminnid']; 
+$managerid = $_POST['managerid']; 
 
 // Execute the statement
 if ($stmt->execute()) {
@@ -54,9 +55,8 @@ if ($stmt->execute()) {
 
 }
 // SQL query to fetch data from the car table
-$sql = "SELECT * FROM manager";
+$sql = "SELECT * FROM agent";
 $result = $connection->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ $result = $connection->query($sql);
     <title></title>
     <style>
         table {
-            width: 80%;
+            width: 100%;
             border-collapse: collapse;
         }
 
@@ -80,10 +80,10 @@ $result = $connection->query($sql);
         th {
             background-color: #f2f2f2;
         }
-        footer{
+         footer{
     height: 50px;
     text-align: center;
-    padding: 15px;
+    padding: 25px;
     color: white;
     background-color: blue;
 }
@@ -94,11 +94,12 @@ $result = $connection->query($sql);
     <table border="5">
         <table border="8">
         <tr>
-            <th>mid</th>
+            <th>agid</th>
             <th>first_name</th>
             <th>last_name</th>
-            <th>address</th>
-            <th>specialization</th>
+            <th>telephone</th>
+            <th>adminnid</th>
+            <th>managerid</th>
             <th>Delete</th>
             <th>Update</th>
         </tr>
@@ -108,15 +109,16 @@ $result = $connection->query($sql);
         if ($result->num_rows > 0) {
             // Output data for each row
             while ($row = $result->fetch_assoc()) {
-                $mid = $row['mid']; // Fetch the car Id
+                $agid = $row['agid']; // Fetch the car Id
                 echo "<tr>
-                    <td>" . $row['mid'] . "</td>
+                    <td>" . $row['agid'] . "</td>
                     <td>" . $row['first_name'] . "</td>
                     <td>" . $row['last_name'] . "</td>
-                    <td>" . $row['address'] . "</td>
-                    <td>" . $row['specialization'] . "</td>
-                    <td><a style='padding:4px' href='manager_delete.php?mid={$row['mid']}'>Delete</a></td>
-                    <td><a style='padding:4px' href='manager_edit.php?mid={$row['mid']}'>edit</a></td> 
+                    <td>" . $row['telephone'] . "</td>
+                    <td>" . $row['adminnid'] . "</td>
+                    <td>" . $row['managerid'] . "</td>
+             <td><a style='padding:4px' href='agent_delete.php?agid={$row['agid']}'>Delete</a></td>
+                <td><a style='padding:4px' href='agent_edit.php?agid={$row['agid']}'>edit</a></td> 
                 </tr>";
             }
         } else {

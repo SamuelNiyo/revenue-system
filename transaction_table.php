@@ -11,7 +11,7 @@
     <div class="container">
         <h2 style="text-align: center; font-family: century; font-weight: bold;">GOVERNMENT REVENUE MANAGEMENT SYSTEM</h2>
         <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF USERS IN OUR SYSTEM</h4>
-        <a href="manager_form.html" class="btn btn-primary" style="margin-top: 0px;">New User</a>
+        <a href="transaction_form.html" class="btn btn-primary" style="margin-top: 0px;">New User</a>
         <a href="home.html" class="btn btn-secondary" style="margin-left: 1000px;">Back Home</a>
         <table class="table table-bordered">
             <thead class="bg-warning">
@@ -33,16 +33,13 @@ if ($connection->connect_error) {
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare and bind the parameters
- $stmt = $connection->prepare("INSERT INTO manager (mid, first_name, last_name, address, specialization) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("ssssi", $mid, $first_name, $last_name, $address, $specialization);
+ $stmt = $connection->prepare("INSERT INTO transaction (tid, userid, revenueid) VALUES (?, ?, ?)");
+$stmt->bind_param("iii", $tid, $userid, $revenueid, );
 
 // Set parameters
-$mid = $_POST['mid'];
-$first_name = $_POST['first_name'];    
-$last_name = $_POST['last_name']; 
-$address = $_POST['address']; 
-$specialization = $_POST['specialization'];
-
+$tid = $_POST['tid'];
+$userid = $_POST['userid'];    
+$revenueid = $_POST['revenueid']; 
 // Execute the statement
 if ($stmt->execute()) {
     echo "New record has been added successfully";
@@ -54,7 +51,7 @@ if ($stmt->execute()) {
 
 }
 // SQL query to fetch data from the car table
-$sql = "SELECT * FROM manager";
+$sql = "SELECT * FROM transaction";
 $result = $connection->query($sql);
 
 ?>
@@ -94,11 +91,9 @@ $result = $connection->query($sql);
     <table border="5">
         <table border="8">
         <tr>
-            <th>mid</th>
-            <th>first_name</th>
-            <th>last_name</th>
-            <th>address</th>
-            <th>specialization</th>
+            <th> id</th>
+            <th>userid</th>
+            <th>revenueid</th>
             <th>Delete</th>
             <th>Update</th>
         </tr>
@@ -108,15 +103,13 @@ $result = $connection->query($sql);
         if ($result->num_rows > 0) {
             // Output data for each row
             while ($row = $result->fetch_assoc()) {
-                $mid = $row['mid']; // Fetch the car Id
+                $tid = $row['tid']; // Fetch the car Id
                 echo "<tr>
-                    <td>" . $row['mid'] . "</td>
-                    <td>" . $row['first_name'] . "</td>
-                    <td>" . $row['last_name'] . "</td>
-                    <td>" . $row['address'] . "</td>
-                    <td>" . $row['specialization'] . "</td>
-                    <td><a style='padding:4px' href='manager_delete.php?mid={$row['mid']}'>Delete</a></td>
-                    <td><a style='padding:4px' href='manager_edit.php?mid={$row['mid']}'>edit</a></td> 
+                    <td>" . $row['tid'] . "</td>
+                    <td>" . $row['userid'] . "</td>
+                    <td>" . $row['revenueid'] . "</td>
+                    <td><a style='padding:4px' href='transaction_delete.php?tid={$row['tid']}'>Delete</a></td>
+                    <td><a style='padding:4px' href='transaction_edit.php?tid={$row['tid']}'>edit</a></td> 
                 </tr>";
             }
         } else {

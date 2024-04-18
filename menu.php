@@ -28,11 +28,11 @@
 			  	<li class="dropdown"><!-- Dropdown menu --> <a href="#">Tables</a>
 				 <div class="dropdown-content">
 				    <a href="user_table.php">User Table</a>
-				    <a href="admin_table.php">Register</a>
-				    <a href="manager_table.php">Manager Form</a>
-				    <a href="agent_table.php">Agent Form</a>
-				    <a href="revenue_table.php">Revenue Form</a>
-				    <a href="transaction_table.php">Transction Form</a>	
+				    <a href="admin_table.php">Admin</a>
+				    <a href="manager_table.php">Manager Table</a>
+				    <a href="agent_table.php">Agent Table</a>
+				    <a href="revenue_table.php">Revenue Table</a>
+				    <a href="transaction_table.php">Transction Table</a>	
 				  </div>
 			  </li>
 				<li class="dropdown"><!-- Dropdown menu --> <a href="#">Setting</a>
