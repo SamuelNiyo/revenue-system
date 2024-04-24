@@ -78,17 +78,17 @@
                 <input type="text" class="form-control" name="email" id="email">
             </div>
             <div class="form-group">
-                <label>User Name</label><br>
-    <select name="user_id" id="user_id" class="input"> 
+                <label>Manager id</label><br>
+    <select name="managerid" id="managerid" class="input"> 
         <?php
-        $query = "SELECT user_id,name FROM user";
+        $query = "SELECT managerid,name FROM user";
         $result = $connection->query($query);
         
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $user_id = $row['user_id'];
-                $name= $row['name'];
-                echo "<option value=\"$user_id\">$name</option>";
+                $managerid = $row['managerid'];
+                $name= $row['first_name'];
+                echo "<option value=\"$managerid\">$name</option>";
             }
         } else {
             echo "<option value=\"\">No users found</option>";

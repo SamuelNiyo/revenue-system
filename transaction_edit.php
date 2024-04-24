@@ -2,36 +2,32 @@
 //call the file that contain database connection
 include"dbconnection.php";
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-  $aid = $_GET["aid"];
+  $tid = $_GET["tid"];
 
-    // Read the row of the selected admin from the database
-    $sql = "SELECT * FROM adminn WHERE aid=$aid";
+    // Read the row of the selected transaction from the database
+    $sql = "SELECT * FROM transaction WHERE tid=$tid";
     $result = $connection->query($sql);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $first_name = $row["first_name"];
-        $last_name = $row["last_name"];
-        $email = $row["email"];
-        $telephone = $row["telephone"];
+        $userid = $row["userid"];
+        $revenueid = $row["revenueid"];
     } else {
-        header("location: /myproject/admin_table.php");
+        header("location: /myproject/transaction_table.php");
         exit;
     }
 }elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $aid = $_POST["aid"];
-    $first_name = $_POST["first_name"];
-    $last_name = $_POST["last_name"];
-    $email=$_POST['email'];
-    $telephone=$_POST["telephone"];
+    $tid = $_POST["tid"];
+    $userid = $_POST["userid"];
+    $revenueid = $_POST["revenueid"];
 
-    if (empty($aid) || empty($first_name) || empty($last_name) || empty($email) || empty($telephone)) {
+    if (empty($tid) || empty($userid) || empty($revenueid)) {
         echo "All feild are required!";
     }else {
-        $sql = "UPDATE adminn SET aid='$aid', first_name='$first_name', last_name='$last_name', email='$email', telephone='$telephone' WHERE aid='$aid'";
+        $sql = "UPDATE transaction SET tid='$tid', userid='$userid', revenueid='$revenueid' WHERE tid='$tid'";
     }
     if ($connection->query($sql) === TRUE) {
         echo " information updated successfully";
-        header("location:/myproject/admin_table.php");
+        header("location:/myproject/transaction_table.php");
     }else {
         echo "Error updating record: " . $connection->error;
     
@@ -88,21 +84,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <center>
     
     <h2>GOVERNMENT REVENUE MANAGEMENT SYSTEM </h2>
-    <h3 style="color:green;">UPDATE ADMIN HERE</h3>
-    <!-- section that contain form that help to update admin information-->
+    <h3 style="color:green;">UPDATE TRANSACTION HERE</h3>
+    <!-- section that contain form that help to update transaction information-->
     <section class="forms">
         <form method="POST">
-    <label>Admin Id</label><br>
-    <input type="text" name="aid" readonly class="input" value="<?php echo $aid; ?>"><br>
-     <label>First Name</label><br>
-    <input type="text" name="first_name"  class="input" value="<?php echo $first_name; ?>"><br>
-    <label>last_name</label><br>
-    <input type="text" name="last_name" class="input" value="<?php echo $last_name; ?>"><br> 
-    <label>email </label><br>
-    <input type="text" name="email" class="input" value="<?php echo $email; ?>" class="input"><br> 
-    <label>telephone</label><br>
-    <input type="text" name="telephone" class="input" value="<?php echo $telephone; ?>"><br> 
-    <input type="submit" name="submit" value="Update" class="sb">
+    <label>Transaction Id</label><br>
+    <input type="text" name="tid" readonly class="input" value="<?php echo $tid; ?>"><br>
+     <label>User Id</label><br>
+    <input type="text" name="userid"  class="input" value="<?php echo $userid; ?>"><br>
+    <label>Revenue Id</label><br>
+    <input type="text" name="revenueid" class="input" value="<?php echo $revenueid; ?>"><br>
+    <input type="submit" name="submit" value="Update" class="sb"> 
 </form>
 
 </section>

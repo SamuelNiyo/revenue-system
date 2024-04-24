@@ -4,7 +4,7 @@ include"dbconnection.php";
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $agid = $_GET["agid"];
 
-    // Read the row of the selected product from the database
+    // Read the row of the selected agent from the database
     $sql = "SELECT * FROM agent WHERE agid=$agid";
     $result = $connection->query($sql);
     if ($result->num_rows > 0) {
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     
     <h2>GOVERNMENT REVENUE MANAGEMENT SYSTEM </h2>
     <h3 style="color:green;">UPDATE USER HERE</h3>
-    <!-- section that contain form that help to update supply information-->
+    <!-- section that contain form that help to update agent information-->
     <section class="forms">
         <form method="POST">
     <label>Agent Id</label><br>
