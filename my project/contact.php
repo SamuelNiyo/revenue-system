@@ -1,6 +1,11 @@
 <?php
 include"menu.php"
 ?>
+<style>
+    body {
+        background-image: url('./css/cont.jpg');
+    }
+</style>
                 <h1>Contact Us</h1>
                 <p>If you have any questions or inquiries, feel free to reach out to us through any of the following
                     means:</p>
@@ -17,21 +22,22 @@ include"menu.php"
     <div class="container mt-4">
         <div class="row">
             <div class="col">
-                <h2>Send us a message</h2>
-                <form>
+                <h2>Send us a Message</h2>
+                <form action="messge.php" method="POST">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Your Name</label>
-                        <input type="text" class="form-control" id="name">
+                        <label for="Names" class="form-label">Your Names</label>
+                        <input type="text" class="form-control" id="Names">
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Your Email</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="Email" class="form-label">Your Email</label>
+                        <input type="Email" class="form-control" id="Email">
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="5"></textarea>
+                        <label for="Message" class="form-label">Message</label>
+                        <textarea class="form-control" id="Message" rows="5"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary"><a href="messge.php" style= "background-color:white; color:blue; font-family:italic; font-size: 35px;">Send Message</button>
+
                 </form>
             </div>
         </div>

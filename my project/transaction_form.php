@@ -7,7 +7,8 @@
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
+<body><br><br>
+    <a href="home.html" style="background-color: blue; border-radius: 8px; color:white; padding: 12px; "> Back Home</a><br>
     <div class="container">
         <h1 class="text-center"><u>Transaction Form</u></h1>
         <form action="transaction_table.php" method="POST">
@@ -51,9 +52,6 @@
             </div>
             
             <button type="submit" class="btn btn-primary">INSERT</button>
-        </form>
-        <form action="home.html">
-            <button type="submit" class="btn btn-secondary">BACK TO HOME</button>
         </form>
     </div>
     <footer class="text-center mt-5"><!-- Footer section -->

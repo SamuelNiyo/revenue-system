@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="adminnid">Adminn Id</label>
-                <select name="aid" id="aid">
+                <select name="aid" class="form-control">
                     <?php
                     include "dbconnection.php";
                     $sql="SELECT aid ,first_name from adminn";
@@ -51,7 +51,7 @@
             </div>
             <div class="form-group">
                 <label for="managerid">Manager Id</label>
-                <select name="mid" id="mid">
+                     <select id="mid" class="form-control">
                     <?php
                     include "dbconnection.php";
                     $sql="SELECT mid ,first_name from manager";

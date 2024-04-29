@@ -11,24 +11,13 @@
     <div class="container">
         <h2 style="text-align: center; font-family: century; font-weight: bold;">GOVERNMENT REVENUE MANAGEMENT SYSTEM</h2>
         <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF USERS IN OUR SYSTEM</h4>
-        <a href="user_form.html" class="btn btn-primary" style="margin-top: 0px;">New User</a>
+        <a href="user_form.php" class="btn btn-primary" style="margin-top: 0px;">New User</a>
         <a href="home.html" class="btn btn-secondary" style="margin-left: 1000px;">Back Home</a>
         <table class="table table-bordered">
             <thead class="bg-warning">
 <?php
 // Connection details
-$host = "localhost";
-$user = "root";
-$pass = "";
-$database = "revenuemanagementsystem";
-
-// Cxfhbfdgnhgfjnreating connection
-$connection = new mysqli($host, $user, $pass, $database);
-
-// Check connection
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
+include "dbconnection.php";
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

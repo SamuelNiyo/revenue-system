@@ -17,7 +17,7 @@
             <thead class="bg-warning">
 <?php
 // Connection details
-include "dbconnection.php";
+iclude "dbconnection.php";
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>User Form</title>
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -14,18 +13,18 @@
         <form action="user_table.php" method="POST">
             <div class="form-group">
                 <label for="uid">ID</label>
-                <input type="number" class="form-control" name="uid" uid="uid">
+                <input type="number" class="form-control" name="uid" id="uid">
             </div>
             <div class="form-group">
-                <label for="first name">First Name</label>
+                <label for="first_name">First Name</label>
                 <input type="text" class="form-control" name="first_name" id="first_name">
             </div>
             <div class="form-group">
-                <label for="last name">Last Name</label>
+                <label for="last_name">Last Name</label>
                 <input type="text" class="form-control" name="last_name" id="last_name">
             </div>
             <div class="form-group">
-                <label for="tin number">Tin Number</label>
+                <label for="tin_number">Tin Number</label>
                 <input type="number" class="form-control" name="tin_number" id="tin_number">
             </div>
             <div class="form-group">
@@ -34,24 +33,24 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" id="email">
+                <input type="email" class="form-control" name="email" id="email">
             </div>
             <div class="form-group">
-                <label for="registration date">Registration Date</label>
+                <label for="registration_date">Registration Date</label>
                 <input type="date" class="form-control" name="registration_date" id="registration_date">
             </div>
             <div class="form-group">
-                <label for="agent_id">Agent Id</label>
-                <select id="agid" class="form-control">
+                <label for="agid">Agent Id</label>
+                <select id="agid" class="form-control" name="agent_id">
                     <?php
                     include "dbconnection.php";
-                    $sql="SELECT agid ,last_name from agent";
+                    $sql="SELECT agid, last_name FROM agent";
                     $result=$connection->query($sql);
                     if ($result && $result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             $agid=$row['agid'];
                             $last_name=$row['last_name'];
-                            echo "<option value=\"$agid\"> $agid $last_name </option>";
+                            echo "<option value=\"$agid\">$agid $last_name</option>";
                         }
                     }
                     ?>

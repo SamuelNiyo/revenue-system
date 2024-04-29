@@ -6,8 +6,20 @@
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Login Form</title>
+    <style>
+    body {
+            background-image: url('./css/img03.jpg');
+            color: orange;
+            padding: 22px;
+            font-family: Elephant;
+            font-weight: bold;
+            font-size: 30px;
+            text color: orange;
+        }
+        </style>
 </head>
 <body>
+
 
 <div class="container mt-5">
     <div class="row justify-content-center">
