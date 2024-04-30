@@ -44,9 +44,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- JavaScript validation and content load for update or modify data-->
+    <script>
+        function confirmUpdate() {
+            return confirm('Are you sure you want to update this record?');
+        }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Enterprise Management system</title>
+    <title></title>
+    <section class="forms">
+       <form method="POST" onsubmit="return confirmUpdate();">
     <style>
         h2{
             font-family:Castellar;
@@ -83,9 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     
     <h2>GOVERNMENT REVENUE MANAGEMENT SYSTEM </h2>
     <h3 style="color:green;">UPDATE USER HERE</h3>
-    <!-- section that contain form that help to update supply information-->
-    <section class="forms">
-        <form method="POST">
+    
     <label>Agent Id</label><br>
     <input type="number" name="agid" readonly class="input" value="<?php echo $agid; ?>"><br>
      <label>First Name</label><br>

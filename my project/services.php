@@ -7,8 +7,10 @@ include"menu.php"
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+  <body>
+            
 </head>
-<body>
+
 	<section>
 	<hr>
   <h1><b><u>Our Services</u></b></h1>

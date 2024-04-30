@@ -8,10 +8,12 @@
     <title>Form</title>
 </head>
 <body>
+    <a href="home.html" style="background-color: blue; border-radius: 8px; color:white; padding: 15px; margin-left: 10px; margin-top: 500px;"> Back Home</a><br>
     <div class="container">
         <h1 class="text-center"><u>Admin Form</u></h1>
 
-        <form action="admin_table.php" method="POST">
+        <!-- Form for data insertion -->
+        <form action="admin_table.php" method="POST" onsubmit="return confirmInsert()">
             <div class="form-group">
                 <label for="aid">ID</label>
                 <input type="number" class="form-control" name="aid" id="aid">
@@ -39,11 +41,14 @@
 
             <button type="submit" class="btn btn-primary">INSERT</button>
         </form>
-
-        <form action="home.html">
-            <button type="submit" class="btn btn-secondary">BACK TO HOME</button>
-        </form>
     </div>
+
+    <!-- JavaScript function for confirmation -->
+    <script>
+        function confirmInsert() {
+            return confirm('Are you sure you want to insert this record?');
+        }
+    </script>
 
     <footer class="text-center"><!-- Footer section -->
         <p>&copy; &reg; 2024 UR CBE BIT YEAR 2 @ Group A</p><!-- Copyright and trademark notice -->

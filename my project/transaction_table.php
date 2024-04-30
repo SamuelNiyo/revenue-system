@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h2 style="text-align: center; font-family: century; font-weight: bold;">GOVERNMENT REVENUE MANAGEMENT SYSTEM</h2>
-        <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF USERS IN OUR SYSTEM</h4>
+        <h4 style="text-align: center; font-family: century; font-weight: bold;">LIST OF TRANSACCTIONS IN OUR SYSTEM</h4>
         <a href="transaction_form.php" class="btn btn-primary" style="margin-top: 0px;">New User</a>
         <a href="home.html" class="btn btn-secondary" style="margin-left: 1000px;">Back Home</a>
         <table class="table table-bordered">

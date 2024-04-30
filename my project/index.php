@@ -39,6 +39,7 @@
                     <button type="submit" name="cancel" class="btn btn-secondary">Cancel</button>
                 </div>
                 <p>If you don't have an account, click here to <a href="registration.php"><b>Sign Up</b></a></p>
+                <p> click here to <a href="resetpassword.php" class="btn btn-secondary" style="margin-left: 100px;"><b>RESET PASSWORD</b></a></p>
             </form>
         </div>
     </div>

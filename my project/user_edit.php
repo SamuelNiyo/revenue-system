@@ -52,6 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Enterprise Management system</title>
+    <script>
+        function confirmUpdate() {
+            return confirm('Do you want to update this record!');
+        }
+    </script>
     <style>
         h2{
             font-family:Castellar;
@@ -83,14 +88,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     </style>
 </head>
+<title>Update user</title>
+ <!-- JavaScript validation and content load for update or modify data-->
+    <script>
+        function confirmUpdate() {
+            return confirm('Are you sure you want to update this record?');
+        }
+    </script>
 <body>
 <center>
     
     <h2>GOVERNMENT REVENUE MANAGEMENT SYSTEM </h2>
     <h3 style="color:green;">UPDATE USER HERE</h3>
     <!-- section that contain form that help to update supply information-->
-    <section class="forms">
-        <form method="POST">
+    <form method="POST" onsubmit="return confirmUpdate();">
     <label>User Id</label><br>
     <input type="text" name="uid" readonly class="input" value="<?php echo $uid; ?>"><br>
      <label>First Name</label><br>
@@ -104,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <label>email</label><br>
     <input type="text" name="email" value="<?php echo $email; ?>" class="input"><br>
     <label>registration_date</label><br>
-    <input type="text" name="registration_date" value="<?php echo $registration_date; ?>" class="input"><br>
+    <input type="date" name="registration_date" value="<?php echo $registration_date; ?>" class="input"><br>
     <label>agent_id</label><br>
     <input type="text" name="agent_id" value="<?php echo $agent_id; ?>" class="input"><br>
     <input type="submit" name="submit" value="Update" class="sb">

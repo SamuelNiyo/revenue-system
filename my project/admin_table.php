@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $stmt->bind_param("ssssi", $aid, $first_name, $last_name, $email, $telephone);
 
 // Set parameters
-$aid = $_POST['id'];
+$aid = $_POST['aid'];
 $first_name = $_POST['first_name'];    
 $last_name = $_POST['last_name']; 
 $email = $_POST['email']; 

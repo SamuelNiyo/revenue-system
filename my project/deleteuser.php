@@ -2,28 +2,27 @@
 include "dbconnection.php";
 
 if (isset($_GET["uid"])) {
+    // Sanitize input
     $uid = $connection->real_escape_string($_GET["uid"]);
+
+    // Prepare JavaScript confirmation function
+    echo " <script>
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete this record?");
+        }
+    </script>";
 
     // Prepare DELETE statement
     $sql = "DELETE FROM user WHERE uid = $uid";
 
-    // JavaScript for confirmation
-    echo '<script>
-        function confirmDelete() {
-            var confirmMsg = confirm("Are you sure you want to delete this record?");
-            if (confirmMsg) {
-                window.location.href = "deleteuser.php?uid=' . $uid . '"; // Change the URL to your delete script
-            }
-        }
-        </script>';
-
     // Execute DELETE statement
     if ($connection->query($sql) === TRUE) {
-        echo "Record deleted successfully";
-        echo '<script>confirmDelete();</script>'; // Call the confirmation function
+        echo <form method="post" onsubmit="return confirmDelete();">;
+        header("Location: user_table.php"); // Redirect after successful deletion
     } else {
         echo "Error deleting record: " . $connection->error;
     }
 }
-$connection->close();
+
+$connection->close(); // Close database connection
 ?>

@@ -84,14 +84,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     </style> 
 </head>
+<!-- JavaScript validation and content load for update or modify data-->
+    <script>
+        function confirmUpdate() {
+            return confirm('Are you sure you want to update this record?');
+        }
+    </script>
 <body>
 <center>
     
     <h2>GOVERNMENT REVENUE MANAGEMENT SYSTEM </h2>
     <h3 style="color:green;">UPDATE ADMIN HERE</h3>
-    <!-- section that contain form that help to update supply information-->
-    <section class="forms">
-        <form method="POST">
+     <form method="POST" onsubmit="return confirmUpdate();">
     <label>Admin Id</label><br>
     <input type="text" name="aid" readonly class="input" value="<?php echo $aid; ?>"><br>
      <label>First Name</label><br>

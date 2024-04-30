@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+      <a href="home.html" style="background-color: blue; border-radius: 8px; color:white; padding: 15px; margin-left: 10px; margin-top: 500px;"> Back Home</a><br>
+    <form action="home.html">
+          
+    <div class="container">
+        </form>
     <div class="container">
         <h1 class="text-center"><u>User Form</u></h1>
         <form action="user_table.php" method="POST">
@@ -58,9 +63,7 @@
             </div>
             <button type="submit" class="btn btn-primary">INSERT</button>
         </form>
-        <form action="home.html">
-            <button type="submit" class="btn btn-secondary">BACK TO HOME</button>
-        </form>
+        
     </div>
     <footer class="text-center mt-5"><!-- Footer section -->
         <p>&copy; &reg; 2024 UR CBE BIT YEAR 2 @ Group A</p><!-- Copyright and trademark notice -->
