@@ -1,0 +1,137 @@
+body{
+	font-family: century;
+	background-image: url('./images/AS.png');
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 22px;
+	color: white;
+}
+header{
+	background-color: gray;
+	padding: 20px;
+}
+nav{
+	display: flex;
+	justify-content: space-between;
+}
+nav ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav li{
+	display: inline-block;
+	margin-right: 20px;
+}
+nav a{
+	background-color: LightSeaGreen;
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+nav a:hover{
+	color: gray;
+	background-color: alter;
+}
+.dropdown{
+	position: right;
+	display: inline-block;
+	direction: rtl;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 160px;
+	box-shadow: green;
+	z-index: 1;
+}
+.dropdown-content a{
+	color: white;
+	padding: 12px 16px;
+	display: block;
+	text-decoration: none;
+}
+.dropdown-content a:hover{
+	background-color:white;
+
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+
+} 
+section{
+	padding: 20px;
+	border-bottom: 1px solid #ddd;
+}
+footer{
+	color: white;
+	height: 50px;
+	text-align: center;
+	padding: 15px;
+	background-color: gray;
+}
+.container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adding opacity to background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: blue;
+        }
+        .container h2 {
+            color: #FF00FF;
+        }
+        .container p {
+            color: #333;
+        }
+        label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 9px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#errorMsg {
+    color: Crimson;
+}
+		.containerr {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: gray; /* Adding opacity to background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 200px;
+        }
+        .containerr h2 {
+            color: Fuchsia;
+            
+        }
+        .containerr p {
+            color: white;
+        }

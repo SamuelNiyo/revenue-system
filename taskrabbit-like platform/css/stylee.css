@@ -1,0 +1,69 @@
+body {
+     background-image: url('./images/image.png');
+     background-repeat: no-repeat;
+    background-size: cover;
+        }
+        label{
+            font-family: century;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        h2{
+             font-family: Imprint MT Shadow;
+            font-weight: bold;
+            font-size:36px;
+            color: blue;
+
+        }
+        button{
+            padding: 10px;
+            width: 140px;
+        }
+        h1{
+            font-size: 24px;
+            text-align: center;
+            font-family: century;
+            font-weight: bold;
+            color: darkblue;
+        }
+      .contain{
+            background-color: white;
+            width: 800px;
+            margin-top: 50px;
+        }
+        h2{
+            font-family:Castellar;
+            color: darkblue;
+        }
+        label{
+            font-family: elephant;
+            font-size: 20px;
+        }
+        .sb{
+            font-family:Georgia;
+            padding: 10px;
+            border-color: blue;
+            background-color: skyblue;
+            width: 200px;
+            margin-top: 5px;
+            border-radius: 12px;
+            font-weight: bold;
+            color: blue;
+
+        }
+
+        .input{
+            width: 350px;
+            height: 35px;
+            border-radius: 12px;
+            border-color: green;
+        }
+
+        footer{
+    color: white;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 45px;
+    background-color: gray;
+}
