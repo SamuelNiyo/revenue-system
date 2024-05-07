@@ -149,8 +149,8 @@ include "menu.php";
 
 
 
-<div><footer style="background-color:teal;text-align: center;width:100%;height:90px; color: white;font-size: 25px;margin-top: 20px; position: fixed;bottom: 0px;left: 0;"><p> Designed by Aimee Diane KUBWIMANA_222002776 &copy YEAR TWO BIT GROUP A &reg 2024</p></footer></div>
-</center>
-<!-- together we can!!!!-->
+<div><footer>
+    <p>Designed by Samuel-Niyomurengezi &copy; YEAR TWO BIT GROUP A &reg; 2024</p>
+</footer>
 </body>
 </html>

@@ -10,13 +10,14 @@
                 <ul>
                     <!-- Navigation links -->
                     <li><a href="home.php">Home</a></li>
-                    <li><a href="about u.php">About Us</a></li>
+                     <li><a href="services.php">Our Services</a></li>
+                    <li><a href="about uss.php">About Us</a></li>
                     <li><a href="contactus.php">Contact Us</a></li>
                     <li class="dropdown"><!-- Dropdown menu --> <a href="#">Forms</a>
                         <div class="dropdown-content">
                             <a href="users.php">Users Form</a>
                             <a href="tasks.php">Tasks Form</a>
-                            <a href="service_provider_form.php">Service Provider Form</a>
+                            <a href="service_provider.php">Service Provider Form</a>
                             <a href="booking_form.php">Booking Form</a>
                             <a href="reviews_form.php">Reviews Form</a>
                             <a href="category_form.php">Category Form</a>   
@@ -30,7 +31,7 @@
                         <div class="dropdown-content">
                             <a href="users_table.php">Users Table</a>
                             <a href="tasks_table.php">Tasks Table</a>
-                            <a href="service_provider_table.php">Service Provider Table</a>
+                            <a href="serviceprovider_table.php">Service Provider Table</a>
                             <a href="booking_table.php">Booking Table</a>
                             <a href="reviews_table.php">Reviews Table</a>
                             <a href="category_table.php">Category Table</a>   

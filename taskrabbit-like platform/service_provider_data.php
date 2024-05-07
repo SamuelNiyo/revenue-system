@@ -5,16 +5,16 @@ include "dbconnection.php";
 // Check if the form was submitted using POST method
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve form data
+    $serviceprovider_id = $_POST['serviceprovider_id'];
     $user_id = $_POST['user_id'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password for security
-    $user_type = $_POST['user_type'];
-    $registration_date = $_POST['registration_date'];
+    $role_id = $_POST['role_id'];
+    $description = $_POST['description'],
+    $hourly_rate = $_POST['hourly_rate'];
+    $rating = $_POST['rating'];
 
     // Prepare SQL query to insert data into the users table
-    $sql = "INSERT INTO users (user_id, username, email, password, user_type, registration_date) 
-            VALUES ('$user_id', '$username', '$email', '$password', '$user_type', '$registration_date')";
+    $sql = "INSERT INTO service_providers (serviceprovider_id, user_id, role_id, description, hourly_rate, rating) 
+            VALUES ('$serviceprovider_id', '$user_id', '$role_id', '$description', '$hourly_rate', '$rating')";
     
     // Execute the SQL query
     $result = $connection->query($sql);
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // If data was inserted successfully, redirect to users_table.php
         echo "Data Inserted Successfully";
-        header("location: users_table.php");
+        header("location: serviceprovider_table.php");
         exit();
     }
 }

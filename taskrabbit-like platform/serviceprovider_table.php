@@ -10,18 +10,19 @@
 <body>
     <div class="container">
         <h2 style="text-align: center; font-family: century; font-weight: bold; color: green;">TASK RABBIT-LIKE PLATFORM</h2>
-        <h4 style="text-align: center; font-family: century; font-weight: bold; color:blue;">TABLE OF ALL USERS </h4>
-        <a href="users.php" class="btn btn-primary" style="margin-left: 15px;">New User</a>
+        <h4 style="text-align: center; font-family: century; font-weight: bold; color:blue;">TABLE OF ALL SERVICE REQUESTED </h4>
+        <a href="service_provider.php" class="btn btn-primary" style="margin-left: 15px;">New User</a>
         <a href="home.php" class="btn btn-secondary" style="margin-left: 1000px;">Back Home</a>
         <table class="table table-bordered" style="margin-left:0px;">
             <thead bgcolor="pink">
                 <tr>
+                    <th>Id</th>
                     <th>User Id</th>
-                    <th>User Names</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>User_Type</th>
-                    <th>Registration Date</th>
+                    <th>Address</th>
+                    <th>Role Id</th>
+                    <th>Description</th>
+                    <th>Hourly Rate</th>
+                    <th>Rating</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
@@ -29,7 +30,7 @@
                 <?php 
                 //call the file that contain database connection
                 include "dbconnection.php";
-                $sql = "SELECT * FROM users";
+                $sql = "SELECT * FROM service_providers";
                 $result = $connection->query($sql);
                 if (!$result) {
                     echo "Invalid query!!" . $connection->error;
@@ -37,16 +38,17 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "
                     <tr>
-                        <td>{$row['user_id']}</td>
-                        <td>{$row['username']}</td> 
-                        <td>{$row['email']}</td>
-                        <td>{$row['password']}</td>
-                        <td>{$row['user_type']}</td>
-                        <td>{$row['registration_date']}</td>
+                        <td>{$row['serviceprovider_id']}</td>
+                        <td>{$row['user_id']}</td> 
+                        <td>{$row['address_id']}</td>
+                        <td>{$row['role_id']}</td>
+                        <td>{$row['description']}</td>
+                        <td>{$row['hourly_rate']}</td>
+                        <td>{$row['rating']}</td>
                         <td>
-                            <a href='/taskrabbit-like platform/users_edit.php?user_id={$row['user_id']}' class='btn btn-primary btn-sm'>Edit</a></td>
+                            <a href='/taskrabbit-like platform/users_edit.php?serviceprovider_id={$row['serviceprovider_id']}' class='btn btn-primary btn-sm'>Edit</a></td>
                             <td>
-                            <a href='/taskrabbit-like platform/users_delete.php?user_id={$row['user_id']}' class='btn btn-danger btn-sm'>Delete</a>
+                            <a href='/taskrabbit-like platform/users_delete.php?serviceprovider_id={$row['serviceprovider_id']}' class='btn btn-danger btn-sm'>Delete</a>
                         </td>
                     </tr>
                     ";
